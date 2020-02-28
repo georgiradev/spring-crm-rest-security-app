@@ -3,8 +3,8 @@ package com.myApp.spring.rest.entity;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "customer")
-public class Customer {
+@Table(name = "employee")
+public class Employee {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,7 +20,7 @@ public class Customer {
     @Column(name = "email")
     private String email;
 
-    public Customer() {
+    public Employee() {
     }
 
     public int getId() {
@@ -57,7 +57,7 @@ public class Customer {
 
     @Override
     public String toString() {
-        return "Customer [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email + "]";
+        return "Employee [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email + "]";
     }
 
 }

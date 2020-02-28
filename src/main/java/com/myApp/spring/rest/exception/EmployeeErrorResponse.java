@@ -1,15 +1,15 @@
 package com.myApp.spring.rest.exception;
 
-public class CustomerErrorResponse {
+public class EmployeeErrorResponse {
 
     private int status;
     private String message;
     private long timeStamp;
 
-    public CustomerErrorResponse() {
+    public EmployeeErrorResponse() {
     }
 
-    public CustomerErrorResponse(int status, String message, long timeStamp) {
+    public EmployeeErrorResponse(int status, String message, long timeStamp) {
         this.status = status;
         this.message = message;
         this.timeStamp = timeStamp;
