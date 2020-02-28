@@ -17,8 +17,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-
-        // add users for in memory authentication
         UserBuilder users = User.withDefaultPasswordEncoder();
 
         auth.inMemoryAuthentication()
@@ -29,25 +27,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-
-        // secures all REST endpoints under "/api/employees"
-        // and adds following security authorizations
-        //
-        // EMPLOYEE role can perform following
-        // 1. Get a list of all employees.  GET /api/employees
-        // 2. Get a single employee.  GET /api/employees/{employeeId}
-
-        //
-        // MANAGER role can perform following
-        // 1. Add a new customer.  POST /api/employees
-        // 2. Update an existing employee.  PUT /api/employees
-        //
-
-        //
-        // ADMIN role can perform following
-        // 1. Delete a customer.  DELETE /api/employees/{employeeId}
-        //
-
         http.authorizeRequests()
                 .antMatchers(HttpMethod.GET, "/api/employees").hasRole("EMPLOYEE")
                 .antMatchers(HttpMethod.GET, "/api/employees/**").hasRole("EMPLOYEE")
