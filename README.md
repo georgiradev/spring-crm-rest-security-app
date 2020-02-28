@@ -12,6 +12,7 @@ You will initial get a 401 error: Unauthorized
 4. In the "Type" drop-down list, select "Basic Auth"
 
 5. Employee credentials:
+
 username: john
 password: test123
 role: EMPLOYEE
