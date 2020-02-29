@@ -39,3 +39,4 @@ MANAGER role can perform following
 
  ADMIN role can perform following
 1. Delete a employee.  DELETE /api/employees/{employeeId}
+2. View Application metrics. GET /actuator
