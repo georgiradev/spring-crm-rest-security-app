@@ -22,11 +22,7 @@ public class EmployeeRestController {
 
     @GetMapping("/employees/{employeeId}")
     public Employee getEmployee(@PathVariable("employeeId") int employeeId) {
-        Employee theEmployee = employeeService.getEmployee(employeeId);
-        if (theEmployee == null) {
-            throw new EmployeeNotFoundException("Employee id not found - " + employeeId);
-        }
-        return theEmployee;
+        return employeeService.getEmployee(employeeId);
     }
 
     @PostMapping("/employees")
@@ -46,11 +42,7 @@ public class EmployeeRestController {
 
     @DeleteMapping("/employees/{employeeId}")
     public String deleteEmployee(@PathVariable("employeeId") int employeeId) {
-        Employee tempEmployee = employeeService.getEmployee(employeeId);
-        if (tempEmployee == null) {
-            throw new EmployeeNotFoundException("Employee id not found - " + employeeId);
-        }
         employeeService.deleteEmployee(employeeId);
-        return "Deleted employee id - " + employeeId;
+        return "Deleted employee id " + employeeId;
     }
 }
